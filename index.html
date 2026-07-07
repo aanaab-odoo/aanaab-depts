@@ -7,7 +7,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f5f4ff;color:#1e1b4b}
-/* NAV */
 header{background:#5b21b6;height:52px;display:flex;align-items:center;padding:0 20px;gap:2px;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(91,33,182,.3)}
 .logo{display:flex;align-items:center;gap:7px;margin-right:14px}
 .logo-dot{width:8px;height:8px;border-radius:50%;background:#10b981}
@@ -16,31 +15,26 @@ header{background:#5b21b6;height:52px;display:flex;align-items:center;padding:0 
 .tab{height:52px;padding:0 14px;background:transparent;border:none;color:rgba(255,255,255,.5);font-size:13px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
 .tab:hover{color:#fff}
 .tab.on{color:#fff;border-bottom-color:#10b981}
-.sync-wrap{margin-left:auto;display:flex;align-items:center;gap:8px}
-.sync-btn{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer}
-.sync-btn:hover{background:rgba(255,255,255,.22)}
-.sync-lbl{font-size:11px;color:rgba(255,255,255,.4)}
-.sync-dot{width:7px;height:7px;border-radius:50%;background:#10b981;display:inline-block;margin-right:4px}
-.sync-dot.loading{background:#f59e0b;animation:blink .5s infinite}
-.sync-dot.err{background:#ef4444}
+.sw{margin-left:auto;display:flex;align-items:center;gap:8px}
+.sb{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer}
+.sb:hover{background:rgba(255,255,255,.22)}
+.sl{font-size:11px;color:rgba(255,255,255,.4)}
+.sd{width:7px;height:7px;border-radius:50%;background:#10b981;display:inline-block;margin-right:4px}
+.sd.loading{background:#f59e0b;animation:blink .5s infinite}
+.sd.err{background:#ef4444}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-/* PAGES */
 .pg{display:none;padding:18px 22px;max-width:1400px;margin:0 auto}.pg.on{display:block}
-/* SECTION */
 .sec{font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:2px;margin:16px 0 10px;display:flex;align-items:center;gap:8px}
 .sec::after{content:"";flex:1;height:1px;background:#e2deff}
-/* KPI */
 .kg{display:grid;gap:10px;margin-bottom:10px}
 .k4{grid-template-columns:repeat(4,1fr)}
 .k3{grid-template-columns:repeat(3,1fr)}
-.k2{grid-template-columns:repeat(2,1fr)}
 .kpi{background:#fff;border:1.5px solid #e2deff;border-top:3px solid var(--ac,#5b21b6);border-radius:12px;padding:13px 15px}
 .kl{font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
 .kv{font-size:20px;font-weight:800;line-height:1}
 .ks{font-size:11px;color:#9ca3af;margin-top:3px}
 .pb{background:#ede9fe;border-radius:3px;height:4px;margin-top:6px;overflow:hidden}
 .pf{height:100%;border-radius:3px}
-/* DEPT CARDS */
 .dg{display:grid;gap:10px;margin-bottom:10px}
 .d4{grid-template-columns:repeat(4,1fr)}
 .d3{grid-template-columns:repeat(3,1fr)}
@@ -54,45 +48,41 @@ header{background:#5b21b6;height:52px;display:flex;align-items:center;padding:0 
 .cd:last-child{border-bottom:none}
 .cdl{font-size:11px;color:#9ca3af}.cdv{font-size:12px;font-weight:700}
 .divr{border-top:1px dashed #e2deff;margin:5px 0}
-/* TABLE */
+.pos{color:#059669}.neg{color:#dc2626}.ze{color:#d1d5db}
 .tw{overflow-x:auto;border-radius:12px;border:1.5px solid #e2deff;background:#fff;margin-bottom:10px}
 table{width:100%;border-collapse:collapse;font-size:12px}
 th{background:#ede9fe;color:#7c3aed;font-weight:700;padding:8px 8px;text-align:right;font-size:11px;white-space:nowrap;border-bottom:1px solid #d4ccff}
-th:first-child{text-align:left;min-width:120px}
+th:first-child{text-align:left;min-width:110px}
 td{padding:7px 8px;border-bottom:1px solid #f0edff;text-align:right;white-space:nowrap}
 td:first-child{text-align:left;font-weight:700}
 tr:hover td{background:#faf9ff}
 tfoot td{background:#ede9fe!important;font-weight:800;color:#5b21b6;border-top:2px solid #d4ccff}
-.pos{color:#059669}.neg{color:#dc2626}.ze{color:#d1d5db}
-/* LOADING */
 .loading{text-align:center;padding:60px;color:#9ca3af;font-size:14px}
 @media(max-width:900px){.k4,.d4{grid-template-columns:repeat(2,1fr)}.k3,.d3{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.k4,.k3,.k2,.d4,.d3,.d2{grid-template-columns:1fr}}
+@media(max-width:500px){.k4,.k3,.d4,.d3,.d2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo"><div class="logo-dot"></div><span class="logo-txt">aanaab</span><span class="logo-sub">Departments 2026</span></div>
-  <button class="tab on"  onclick="nav('ov',this)">Overview</button>
-  <button class="tab"     onclick="nav('pr',this)">Product</button>
-  <button class="tab"     onclick="nav('pj',this)">Projects</button>
-  <button class="tab"     onclick="nav('sp',this)">Support</button>
-  <div class="sync-wrap">
-    <span class="sync-lbl"><span class="sync-dot" id="sdot"></span><span id="slbl">Loading...</span></span>
-    <button class="sync-btn" onclick="sync()">&#8635; Sync</button>
+  <button class="tab on" onclick="nav('ov',this)">Overview</button>
+  <button class="tab"    onclick="nav('pr',this)">Product</button>
+  <button class="tab"    onclick="nav('pj',this)">Projects</button>
+  <button class="tab"    onclick="nav('sp',this)">Support</button>
+  <div class="sw">
+    <span class="sl"><span class="sd" id="sdot"></span><span id="slbl">Loading...</span></span>
+    <button class="sb" onclick="sync()">&#8635; Sync</button>
   </div>
 </header>
-
-<div class="pg on" id="p-ov"><div class="loading">Loading data...</div></div>
-<div class="pg"    id="p-pr"><div class="loading">Loading data...</div></div>
-<div class="pg"    id="p-pj"><div class="loading">Loading data...</div></div>
-<div class="pg"    id="p-sp"><div class="loading">Loading data...</div></div>
+<div class="pg on" id="p-ov"><div class="loading">Loading...</div></div>
+<div class="pg"    id="p-pr"><div class="loading">Loading...</div></div>
+<div class="pg"    id="p-pj"><div class="loading">Loading...</div></div>
+<div class="pg"    id="p-sp"><div class="loading">Loading...</div></div>
 
 <script>
-var CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS0lejKqhGvbuhBMhHiXI9whSM8aaqMfj7tiVQ2ERTpFkvbMgRSlZLTQhWjXJQV1036uWePnZs8INbp/pub?output=csv";
-var MN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-var CFG = {
+var CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0lejKqhGvbuhBMhHiXI9whSM8aaqMfj7tiVQ2ERTpFkvbMgRSlZLTQhWjXJQV1036uWePnZs8INbp/pub?output=csv";
+var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var CFG={
   "B2C":           {color:"#3b82f6",rev:true, group:"product"},
   "B2B":           {color:"#10b981",rev:true, group:"product"},
   "B2G":           {color:"#f59e0b",rev:true, group:"projects"},
@@ -105,38 +95,27 @@ var CFG = {
   "Finance":       {color:"#5b21b6",rev:false,group:"support"},
   "Others":        {color:"#94a3b8",rev:false,group:"support"}
 };
-var D = {};
-var curTab = "ov";
+var D={};
 
 function cf(k){return CFG[k]||{color:"#6b7280",rev:false,group:"support"};}
-function ds(group){return Object.keys(CFG).filter(function(k){return !group||CFG[k].group===group;});}
+function ds(g){return Object.keys(CFG).filter(function(k){return !g||CFG[k].group===g;});}
 function agg(k,f){return MN.reduce(function(s,m){return s+((D[k]&&D[k][f]&&D[k][f][m])||0);},0);}
-function aggM(k,f,m){return (D[k]&&D[k][f]&&D[k][f][m])||0;}
-function fK(n){
-  if(!n&&n!==0)return"—";
-  var s=n<0?"-":"",a=Math.abs(n);
-  if(a>=1000000)return s+(a/1000000).toFixed(2)+"M";
-  if(a>=1000)return s+(a/1000).toFixed(1)+"K";
-  return s+Math.round(a).toLocaleString();
-}
+function am(k,f,m){return (D[k]&&D[k][f]&&D[k][f][m])||0;}
+function fK(n){if(!n&&n!==0)return"—";var s=n<0?"-":"",a=Math.abs(n);if(a>=1000000)return s+(a/1000000).toFixed(2)+"M";if(a>=1000)return s+(a/1000).toFixed(1)+"K";return s+Math.round(a).toLocaleString();}
 function fm(n){return n?new Intl.NumberFormat("en").format(Math.round(n)):"—";}
 function pc(p){return p>=100?"#059669":p>=50?"#d97706":"#dc2626";}
 function pbar(p,c){return '<div class="pb"><div class="pf" style="width:'+Math.min(p,100)+'%;background:'+c+';height:100%"></div></div>';}
 
-function setSyncStatus(state,msg){
+function setSS(state,msg){
   var dot=document.getElementById("sdot"),lbl=document.getElementById("slbl");
-  dot.className="sync-dot"+(state==="loading"?" loading":state==="err"?" err":"");
+  dot.className="sd"+(state==="loading"?" loading":state==="err"?" err":"");
   lbl.textContent=msg;
 }
-
 function parseCSV(text){
-  var rows=text.split(/\r?\n/).map(function(r){
-    var cells=[],cur="",inq=false;
-    for(var i=0;i<r.length;i++){var ch=r[i];if(ch==='"'){inq=!inq;}else if(ch===","&&!inq){cells.push(cur.trim());cur="";}else{cur+=ch;}}
-    cells.push(cur.trim());return cells;
-  });
-  var hdr=-1;
-  for(var i=0;i<rows.length;i++){if(rows[i][0]==="Department"){hdr=i;break;}}
+  var rows=text.split(/
+?
+/).map(function(r){var cells=[],cur="",inq=false;for(var i=0;i<r.length;i++){var ch=r[i];if(ch==='"'){inq=!inq;}else if(ch===","&&!inq){cells.push(cur.trim());cur="";}else{cur+=ch;}}cells.push(cur.trim());return cells;});
+  var hdr=-1;for(var i=0;i<rows.length;i++){if(rows[i][0]==="Department"){hdr=i;break;}}
   if(hdr<0)return null;
   var out={},cur=null;
   for(var i=hdr+1;i<rows.length;i++){
@@ -145,84 +124,34 @@ function parseCSV(text){
     if(dv){var nm=dv.replace(/^[^a-zA-Z]+/,"").trim();cur=nm;if(!out[cur])out[cur]={};}
     if(!cur||!fv)continue;
     out[cur][fv]={};
-    for(var mi=0;mi<MN.length;mi++){
-      var raw=(r[mi+2]||"").replace(/,/g,"").replace(/[(]([^)]+)[)]/,"-$1").replace(/^-$/,"0").trim();
-      out[cur][fv][MN[mi]]=raw===""?0:(parseFloat(raw)||0);
-    }
+    for(var mi=0;mi<MN.length;mi++){var raw=(r[mi+2]||"").replace(/,/g,"").replace(/[(]([^)]+)[)]/,"-$1").replace(/^-$/,"0").trim();out[cur][fv][MN[mi]]=raw===""?0:(parseFloat(raw)||0);}
   }
   return out;
 }
-
 function sync(){
-  setSyncStatus("loading","Syncing...");
+  setSS("loading","Syncing...");
   fetch(CSV_URL)
     .then(function(r){return r.text();})
-    .then(function(text){
-      var parsed=parseCSV(text);
-      if(!parsed||!Object.keys(parsed).length)throw new Error("Parse failed");
-      D=parsed;
-      setSyncStatus("ok","Updated "+new Date().toLocaleTimeString());
-      renderAll();
-    })
-    .catch(function(e){
-      setSyncStatus("err","Sync failed");
-      // Use embedded data if available
-      if(Object.keys(D).length){renderAll();}
-    });
+    .then(function(t){var p=parseCSV(t);if(!p||!Object.keys(p).length)throw new Error("parse");D=p;setSS("ok","Updated "+new Date().toLocaleTimeString());renderAll();})
+    .catch(function(){setSS("err","Sync failed");if(Object.keys(D).length)renderAll();});
 }
-
 function nav(id,btn){
   document.querySelectorAll(".pg").forEach(function(p){p.classList.remove("on");});
   document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("on");});
   document.getElementById("p-"+id).classList.add("on");
   if(btn)btn.classList.add("on");
-  curTab=id;
 }
 
-// ── CARD builder ──
-function buildCard(k){
-  var c=cf(k);
-  var rev=agg(k,"Revenue"),tgt=agg(k,"Annual Target");
-  var exp=k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses");
-  var cIn=agg(k,"Cash In"),cOut=agg(k,"Cash Out");
-  var pl=c.rev?(rev-exp):(0-exp);
-  var p=tgt>0?(rev/tgt*100):0;
-  var pColor=pc(p);
-  var bc=pl>0?"bp":pl<0?"bl":"bn",bt=pl>0?"Profit":pl<0?"Loss":"—";
-  var sub=c.sub?' <span style="font-size:10px;background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px">sub</span>':"";
-  var h='<div class="dc" style="--dc:'+c.color+'">';
-  h+='<div class="dct"><span class="dcn">'+k+sub+'</span><span class="badge '+bc+'">'+bt+'</span></div>';
-  if(c.rev){
-    h+='<div style="font-size:11px;color:#9ca3af">Revenue</div>';
-    h+='<div style="font-size:17px;font-weight:800;color:'+c.color+'">'+fK(rev)+' <span style="font-size:11px;color:#9ca3af;font-weight:400">SAR</span></div>';
-    h+=pbar(p,pColor);
-    h+='<div style="font-size:10px;font-weight:700;color:'+pColor+';margin-top:2px">'+p.toFixed(1)+'% of '+fK(tgt)+'</div>';
-  }
-  h+='<div class="cd" style="margin-top:6px"><span class="cdl">Expenses'+(k==="Tech & Product"?" (cash out)":"")+'</span><span class="cdv neg">'+fK(exp)+'</span></div>';
-  h+='<div class="cd"><span class="cdl">Net P&L</span><span class="cdv" style="color:'+(pl>=0?"#059669":"#dc2626")+'">'+fK(pl)+'</span></div>';
-  h+='<div class="divr"></div>';
-  h+='<div class="cd"><span class="cdl">Cash in</span><span class="cdv pos">'+fK(cIn)+'</span></div>';
-  h+='<div class="cd"><span class="cdl">Cash out</span><span class="cdv neg">'+fK(cOut)+'</span></div>';
-  h+='<div class="cd"><span class="cdl">Net cash</span><span class="cdv" style="color:'+((cIn-cOut)>=0?"#059669":"#dc2626")+'">'+fK(cIn-cOut)+'</span></div>';
-  h+='</div>';
-  return h;
-}
-
-// ── SUMMARY KPIs ──
-function buildKPIs(depts,mainRevDs,cashDs){
-  var tR=mainRevDs.reduce(function(s,k){return s+agg(k,"Revenue");},0);
-  var tT=mainRevDs.reduce(function(s,k){return s+agg(k,"Annual Target");},0);
+// ── KPI strip ──
+function kpis(depts,mainRev,cashDs){
+  var tR=mainRev.reduce(function(s,k){return s+agg(k,"Revenue");},0);
+  var tT=mainRev.reduce(function(s,k){return s+agg(k,"Annual Target");},0);
   var tE=depts.reduce(function(s,k){return s+(k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses"));},0);
-  var tPL=tR-tE;
-  var tCI=cashDs.reduce(function(s,k){return s+agg(k,"Cash In");},0);
-  var tCO=cashDs.reduce(function(s,k){return s+agg(k,"Cash Out");},0);
-  var net=tCI-tCO;
-  var pct=tT>0?(tR/tT*100):0;
-  var pColor=pc(pct);
+  var tPL=tR-tE,tCI=cashDs.reduce(function(s,k){return s+agg(k,"Cash In");},0),tCO=cashDs.reduce(function(s,k){return s+agg(k,"Cash Out");},0),net=tCI-tCO,pct=tT>0?(tR/tT*100):0,pC=pc(pct);
   var h='<div class="kg k4">';
   h+='<div class="kpi" style="--ac:#5b21b6"><div class="kl">Total Revenue</div><div class="kv" style="color:#5b21b6">'+fK(tR)+'</div><div class="ks">SAR</div></div>';
-  h+='<div class="kpi" style="--ac:'+pColor+'"><div class="kl">% of Target</div><div class="kv" style="color:'+pColor+'">'+pct.toFixed(1)+'%</div>'+pbar(pct,pColor)+'</div>';
-  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Total Expenses</div><div class="kv" style="color:#dc2626">'+fK(tE)+'</div><div class="ks">SAR</div></div>';
+  h+='<div class="kpi" style="--ac:'+pC+'"><div class="kl">% of Target</div><div class="kv" style="color:'+pC+'">'+pct.toFixed(1)+'%</div>'+pbar(pct,pC)+'</div>';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Total Expenses</div><div class="kv" style="color:#dc2626">'+fK(tE)+'</div></div>';
   h+='<div class="kpi" style="--ac:'+(tPL>=0?"#059669":"#dc2626")+'"><div class="kl">Net P&L</div><div class="kv" style="color:'+(tPL>=0?"#059669":"#dc2626")+'">'+fK(tPL)+'</div><div class="ks">'+(tPL>=0?"Profit":"Loss")+'</div></div>';
   h+='</div><div class="kg k3" style="margin-top:0">';
   h+='<div class="kpi" style="--ac:#059669"><div class="kl">Cash In</div><div class="kv" style="color:#059669">'+fK(tCI)+'</div></div>';
@@ -232,84 +161,184 @@ function buildKPIs(depts,mainRevDs,cashDs){
   return h;
 }
 
-// ── REVENUE TABLE ──
-function buildRevTable(depts){
-  var revDs=depts.filter(function(k){return cf(k).rev;});
-  var h='<div class="tw"><table><thead><tr><th>Department</th>';
-  MN.forEach(function(m){h+='<th>'+m+'</th>';});
-  h+='<th>Total</th><th>Target</th><th>%</th></tr></thead><tbody>';
-  revDs.forEach(function(k){
-    var c=cf(k),tot=agg(k,"Revenue"),tgt=agg(k,"Annual Target"),p=tgt>0?(tot/tgt*100):0;
-    h+='<tr><td style="color:'+c.color+'">'+k+(c.sub?" (sub)":"")+'</td>';
-    MN.forEach(function(m){var v=aggM(k,"Revenue",m);h+='<td class="'+(v>0?"pos":"ze")+'">'+(v>0?fm(v):"—")+'</td>';});
-    h+='<td class="pos" style="font-weight:700">'+fm(tot)+'</td><td class="ze">'+fm(tgt)+'</td>';
-    h+='<td style="font-weight:700;color:'+pc(p)+'">'+p.toFixed(1)+'%</td></tr>';
-  });
-  h+='</tbody></table></div>';
+// ── Dept card ──
+function card(k, supportMode){
+  var c=cf(k);
+  var rev=agg(k,"Revenue"),tgt=agg(k,"Annual Target");
+  var exp=k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses");
+  var cIn=agg(k,"Cash In"),cOut=agg(k,"Cash Out"),netC=cIn-cOut;
+  var pl=c.rev?(rev-exp):(0-exp);
+  var p=tgt>0?(rev/tgt*100):0,pC=pc(p);
+  var bc=pl>0?"bp":pl<0?"bl":"bn",bt=pl>0?"Profit":pl<0?"Loss":"—";
+  var sub=c.sub?' <span style="font-size:10px;background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px">sub</span>':"";
+  var h='<div class="dc" style="--dc:'+c.color+'">';
+  h+='<div class="dct"><span class="dcn">'+k+sub+'</span><span class="badge '+bc+'">'+bt+'</span></div>';
+
+  if(!supportMode){
+    // Show full card with rev + expenses + cash
+    if(c.rev){
+      h+='<div style="font-size:11px;color:#9ca3af">Revenue</div>';
+      h+='<div style="font-size:17px;font-weight:800;color:'+c.color+'">'+fK(rev)+' <span style="font-size:11px;color:#9ca3af;font-weight:400">SAR</span></div>';
+      h+=pbar(p,pC);
+      h+='<div style="font-size:10px;font-weight:700;color:'+pC+';margin-top:2px">'+p.toFixed(1)+'% of '+fK(tgt)+'</div>';
+    }
+    h+='<div class="cd" style="margin-top:6px"><span class="cdl">Expenses'+(k==="Tech & Product"?" (cash out)":"")+'</span><span class="cdv neg">'+fK(exp)+'</span></div>';
+    h+='<div class="cd"><span class="cdl">Net P&L</span><span class="cdv" style="color:'+(pl>=0?"#059669":"#dc2626")+'">'+fK(pl)+'</span></div>';
+    h+='<div class="divr"></div>';
+  } else {
+    // Support mode: ONLY cash rows, no exp/pl
+    h+='<div style="margin-top:2px"></div>';
+  }
+
+  h+='<div class="cd"><span class="cdl">Cash in</span><span class="cdv pos">'+fK(cIn)+'</span></div>';
+  h+='<div class="cd"><span class="cdl">Cash out</span><span class="cdv neg">'+fK(cOut)+'</span></div>';
+  h+='<div class="cd"><span class="cdl">Net cash</span><span class="cdv" style="color:'+(netC>=0?"#059669":"#dc2626")+'">'+fK(netC)+'</span></div>';
+  h+='</div>';
   return h;
 }
 
-// ── CASH TABLE ──
-function buildCashTable(depts,field,totDs){
-  var posColor=field==="Cash In"?"#059669":"#dc2626";
-  var h='<div class="tw"><table><thead><tr><th>Department</th>';
+// ── Single dept detail table ──
+function deptDetailTable(k){
+  var c=cf(k);
+  var color=c.color;
+  var rev=agg(k,"Revenue"),tgt=agg(k,"Annual Target"),exp=agg(k,"Expenses"),cIn=agg(k,"Cash In"),cOut=agg(k,"Cash Out");
+  var pl=rev-exp,netC=cIn-cOut;
+  var p=tgt>0?(rev/tgt*100):0;
+
+  var rows=[
+    {label:"Revenue",      field:"Revenue",      color:"#059669"},
+    {label:"Annual Target",field:"Annual Target", color:"#9ca3af"},
+    {label:"Expenses",     field:"Expenses",      color:"#dc2626"},
+    {label:"Net P&L",      field:null,            color:pl>=0?"#059669":"#dc2626", custom:function(m){return am(k,"Revenue",m)-am(k,"Expenses",m);}},
+    {label:"Cash In",      field:"Cash In",       color:"#059669"},
+    {label:"Cash Out",     field:"Cash Out",      color:"#dc2626"},
+    {label:"Net Cash",     field:null,            color:null, custom:function(m){return am(k,"Cash In",m)-am(k,"Cash Out",m);}},
+  ];
+
+  var h='<div style="margin-bottom:14px">';
+  h+='<div style="font-size:12px;font-weight:700;color:'+color+';margin-bottom:6px;padding:6px 10px;background:#fff;border-radius:8px;border-left:3px solid '+color+'">'+k+'</div>';
+  h+='<div class="tw"><table><thead><tr><th>Field</th>';
+  MN.forEach(function(m){h+='<th>'+m+'</th>';});
+  h+='<th>Total</th></tr></thead><tbody>';
+
+  rows.forEach(function(row){
+    h+='<tr><td style="color:'+row.color+'">'+row.label+'</td>';
+    var rowTotal=0;
+    MN.forEach(function(m){
+      var v=row.custom?row.custom(m):(am(k,row.field,m));
+      rowTotal+=v;
+      var col=v>0?row.color:v<0?"#dc2626":"#d1d5db";
+      h+='<td style="color:'+col+'">'+(v!==0?fm(v):"—")+'</td>';
+    });
+    h+='<td style="font-weight:700;color:'+(rowTotal>=0?row.color:"#dc2626")+'">'+(rowTotal!==0?fm(rowTotal):"—")+'</td>';
+    h+='</tr>';
+  });
+
+  h+='</tbody></table></div></div>';
+  return h;
+}
+
+// ── Aggregate table for a group ──
+function groupSummaryTable(depts,field,label,posColor){
+  var cashDs=depts.filter(function(k){return !cf(k).sub;});
+  var h='<div class="sec">'+label+'</div><div class="tw"><table><thead><tr><th>Department</th>';
   MN.forEach(function(m){h+='<th>'+m+'</th>';});
   h+='<th>Total</th></tr></thead><tbody>';
   depts.forEach(function(k){
     var c=cf(k),tot=agg(k,field);
     h+='<tr><td style="color:'+c.color+'">'+k+(c.sub?" (sub)":"")+'</td>';
-    MN.forEach(function(m){var v=aggM(k,field,m);h+='<td class="'+(v>0?(field==="Cash In"?"pos":"neg"):"ze")+'">'+(v>0?fm(v):"—")+'</td>';});
+    MN.forEach(function(m){var v=am(k,field,m);h+='<td class="'+(v>0?(posColor==="#059669"?"pos":"neg"):"ze")+'">'+(v>0?fm(v):"—")+'</td>';});
     h+='<td style="font-weight:700;color:'+posColor+'">'+fm(tot)+'</td></tr>';
   });
-  var g=(totDs||depts).reduce(function(s,k){return s+agg(k,field);},0);
+  // Footer uses cashDs (non-sub) for totals
   h+='<tfoot><tr><td>TOTAL</td>';
-  MN.forEach(function(m){var v=(totDs||depts).reduce(function(s,k){return s+aggM(k,field,m);},0);h+='<td>'+(v?fm(v):"—")+'</td>';});
-  h+='<td>'+fm(g)+'</td></tr></tfoot></table></div>';
+  MN.forEach(function(m){var v=cashDs.reduce(function(s,k){return s+am(k,field,m);},0);h+='<td>'+(v?fm(v):"—")+'</td>';});
+  h+='<td>'+fm(cashDs.reduce(function(s,k){return s+agg(k,field);},0))+'</td></tr></tfoot></table></div>';
   return h;
 }
 
-// ── RENDER PAGES ──
-function renderAll(){
-  renderOv();
-  renderGroup("pr","Product","product",2);
-  renderGroup("pj","Projects","projects",3);
-  renderGroup("sp","Support","support",4);
-}
-
+// ══ OVERVIEW ══
 function renderOv(){
   var all=Object.keys(CFG);
   var mainRev=all.filter(function(k){return cf(k).rev&&!cf(k).sub;});
   var cashDs=all.filter(function(k){return !cf(k).sub;});
   var h='<div class="sec">Company Summary — YTD 2026</div>';
-  h+=buildKPIs(all,mainRev,cashDs);
+  h+=kpis(all,mainRev,cashDs);
   h+='<div class="sec">Departments</div><div class="dg d4">';
-  all.forEach(function(k){h+=buildCard(k);});
+  all.forEach(function(k){h+=card(k,false);});
   h+='</div>';
-  h+='<div class="sec">Revenue Table (SAR)</div>'+buildRevTable(all);
-  h+='<div class="sec">Cash In — Monthly (SAR)</div>'+buildCashTable(all,"Cash In",cashDs);
-  h+='<div class="sec">Cash Out — Monthly (SAR)</div>'+buildCashTable(all,"Cash Out",cashDs);
+  h+='<div class="sec">Revenue Table (SAR)</div>';
+  h+=groupSummaryTable(all.filter(function(k){return cf(k).rev;}),"Revenue","Revenue Table (SAR)","#059669").replace('<div class="sec">Revenue Table (SAR)</div>','');
+  h+=groupSummaryTable(cashDs,"Cash In","","#059669");
+  h+=groupSummaryTable(cashDs,"Cash Out","","#dc2626");
   document.getElementById("p-ov").innerHTML=h;
 }
 
-function renderGroup(pgId,title,group,cols){
-  var depts=Object.keys(CFG).filter(function(k){return CFG[k].group===group;});
-  var mainRev=depts.filter(function(k){return cf(k).rev&&!cf(k).sub;});
-  var cashDs=depts.filter(function(k){return !cf(k).sub;});
-  var gridCls="d"+Math.min(cols,depts.length);
-  var h='<div class="sec">'+title+' — YTD 2026</div>';
-  h+=buildKPIs(depts,mainRev,cashDs);
-  h+='<div class="sec">Departments</div><div class="dg '+gridCls+'">';
-  depts.forEach(function(k){h+=buildCard(k);});
+// ══ PRODUCT TAB ══
+function renderPr(){
+  var depts=["B2C","B2B"];
+  var cashDs=depts;
+  var h='<div class="sec">Product — YTD 2026</div>';
+  h+=kpis(depts,depts,cashDs);
+  h+='<div class="sec">Departments</div><div class="dg d2">';
+  depts.forEach(function(k){h+=card(k,false);});
   h+='</div>';
-  if(depts.some(function(k){return cf(k).rev;})){
-    h+='<div class="sec">Revenue Table (SAR)</div>'+buildRevTable(depts);
-  }
-  h+='<div class="sec">Cash In — Monthly (SAR)</div>'+buildCashTable(depts,"Cash In",cashDs);
-  h+='<div class="sec">Cash Out — Monthly (SAR)</div>'+buildCashTable(depts,"Cash Out",cashDs);
-  document.getElementById("p-"+pgId).innerHTML=h;
+  h+='<div class="sec">Department Details</div>';
+  depts.forEach(function(k){h+=deptDetailTable(k);});
+  document.getElementById("p-pr").innerHTML=h;
 }
 
-// Boot
+// ══ PROJECTS TAB ══
+function renderPj(){
+  var depts=["B2G","MOC KG","DDC"];
+  var cashDs=depts.filter(function(k){return !cf(k).sub;});
+  var mainRev=depts.filter(function(k){return !cf(k).sub;});
+  var h='<div class="sec">Projects — YTD 2026</div>';
+  h+=kpis(depts,mainRev,cashDs);
+  h+='<div class="sec">Departments</div><div class="dg d3">';
+  depts.forEach(function(k){h+=card(k,false);});
+  h+='</div>';
+  h+='<div class="sec">Department Details</div>';
+  depts.forEach(function(k){h+=deptDetailTable(k);});
+  document.getElementById("p-pj").innerHTML=h;
+}
+
+// ══ SUPPORT TAB ══
+function renderSp(){
+  var depts=["Tech & Product","Content & Qual","Operations","HR","Finance","Others"];
+  var h='<div class="sec">Support — YTD 2026</div>';
+  // KPIs: no revenue
+  var tE=depts.reduce(function(s,k){return s+(k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses"));},0);
+  var tCI=depts.reduce(function(s,k){return s+agg(k,"Cash In");},0);
+  var tCO=depts.reduce(function(s,k){return s+agg(k,"Cash Out");},0);
+  var net=tCI-tCO;
+  h+='<div class="kg k3">';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Total Expenses</div><div class="kv" style="color:#dc2626">'+fK(tE)+'</div></div>';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Cash Out</div><div class="kv" style="color:#dc2626">'+fK(tCO)+'</div></div>';
+  h+='<div class="kpi" style="--ac:'+(net>=0?"#059669":"#dc2626")+'"><div class="kl">Net Cash Flow</div><div class="kv" style="color:'+(net>=0?"#059669":"#dc2626")+'">'+fK(net)+'</div></div>';
+  h+='</div>';
+  // Cards: cash only
+  h+='<div class="sec">Departments</div><div class="dg d3">';
+  depts.forEach(function(k){h+=card(k,true);});
+  h+='</div>';
+  // Cash Out table only (no revenue)
+  h+='<div class="sec">Cash Out — Monthly (SAR)</div><div class="tw"><table><thead><tr><th>Department</th>';
+  MN.forEach(function(m){h+='<th>'+m+'</th>';});
+  h+='<th>Total</th></tr></thead><tbody>';
+  depts.forEach(function(k){
+    var c=cf(k),tot=agg(k,"Cash Out");
+    h+='<tr><td style="color:'+c.color+'">'+k+'</td>';
+    MN.forEach(function(m){var v=am(k,"Cash Out",m);h+='<td class="'+(v>0?"neg":"ze")+'">'+(v>0?fm(v):"—")+'</td>';});
+    h+='<td class="neg" style="font-weight:700">'+fm(tot)+'</td></tr>';
+  });
+  var gO=depts.reduce(function(s,k){return s+agg(k,"Cash Out");},0);
+  h+='<tfoot><tr><td>TOTAL</td>';
+  MN.forEach(function(m){var v=depts.reduce(function(s,k){return s+am(k,"Cash Out",m);},0);h+='<td>'+(v?fm(v):"—")+'</td>';});
+  h+='<td>'+fm(gO)+'</td></tr></tfoot></table></div>';
+  document.getElementById("p-sp").innerHTML=h;
+}
+
+function renderAll(){renderOv();renderPr();renderPj();renderSp();}
 sync();
 </script>
 </body>
