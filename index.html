@@ -7,42 +7,45 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f5f4ff;color:#1e1b4b}
-header{background:#5b21b6;height:52px;display:flex;align-items:center;padding:0 20px;gap:2px;position:sticky;top:0;z-index:50}
+header{background:#5b21b6;height:52px;display:flex;align-items:center;padding:0 20px;position:sticky;top:0;z-index:50}
 .logo{display:flex;align-items:center;gap:7px;margin-right:14px}
-.logo-dot{width:8px;height:8px;border-radius:50%;background:#10b981}
-.logo-txt{font-size:14px;font-weight:700;color:#fff}
-.logo-sub{font-size:11px;color:rgba(255,255,255,.45);margin-left:4px}
+.ld{width:8px;height:8px;border-radius:50%;background:#10b981}
+.lt{font-size:14px;font-weight:700;color:#fff}
+.ls{font-size:11px;color:rgba(255,255,255,.45);margin-left:4px}
 .tab{height:52px;padding:0 14px;background:transparent;border:none;color:rgba(255,255,255,.5);font-size:13px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
 .tab:hover{color:#fff}
 .tab.on{color:#fff;border-bottom-color:#10b981}
-.sw{margin-left:auto;display:flex;align-items:center;gap:8px}
+.nr{margin-left:auto;display:flex;align-items:center;gap:8px}
 .sb{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer}
-.sl{font-size:11px;color:rgba(255,255,255,.4)}
-.sd{width:7px;height:7px;border-radius:50%;background:#10b981;display:inline-block;margin-right:4px}
-.sd.spin{background:#f59e0b}
-.pg{display:none;padding:18px 22px;max-width:1400px;margin:0 auto}.pg.on{display:block}
+.nl{font-size:11px;color:rgba(255,255,255,.4)}
+.pg{display:none;padding:18px 22px;max-width:1400px;margin:0 auto}
+.pg.on{display:block}
 .sec{font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:2px;margin:16px 0 10px;display:flex;align-items:center;gap:8px}
 .sec::after{content:"";flex:1;height:1px;background:#e2deff}
-.kg{display:grid;gap:10px;margin-bottom:10px}
-.k4{grid-template-columns:repeat(4,1fr)}.k3{grid-template-columns:repeat(3,1fr)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:10px}
 .kpi{background:#fff;border:1.5px solid #e2deff;border-top:3px solid var(--ac,#5b21b6);border-radius:12px;padding:13px 15px}
 .kl{font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
 .kv{font-size:20px;font-weight:800;line-height:1}
 .ks{font-size:11px;color:#9ca3af;margin-top:3px}
-.pb{background:#ede9fe;border-radius:3px;height:4px;margin-top:6px;overflow:hidden}
-.pf{height:100%;border-radius:3px}
-.dg{display:grid;gap:10px;margin-bottom:10px}
-.d4{grid-template-columns:repeat(4,1fr)}.d3{grid-template-columns:repeat(3,1fr)}.d2{grid-template-columns:repeat(2,1fr)}
-.dc{background:#fff;border:1.5px solid #e2deff;border-top:3px solid var(--dc,#5b21b6);border-radius:12px;padding:13px}
+.pbar{background:#ede9fe;border-radius:3px;height:4px;margin-top:6px;overflow:hidden}
+.pfil{height:100%;border-radius:3px}
+.dc{background:#fff;border:1.5px solid #e2deff;border-top:3px solid var(--bc,#5b21b6);border-radius:12px;padding:13px}
 .dct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
 .dcn{font-size:13px;font-weight:700}
-.badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px}
-.bp{background:#d1fae5;color:#065f46}.bl{background:#fee2e2;color:#991b1b}.bn{background:#fef3c7;color:#92400e}
-.cd{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0edff}
-.cd:last-child{border-bottom:none}
-.cdl{font-size:11px;color:#9ca3af}.cdv{font-size:12px;font-weight:700}
-.divr{border-top:1px dashed #e2deff;margin:5px 0}
-.pos{color:#059669}.neg{color:#dc2626}.ze{color:#d1d5db}
+.bdg{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px}
+.bp{background:#d1fae5;color:#065f46}
+.bl{background:#fee2e2;color:#991b1b}
+.bn{background:#fef3c7;color:#92400e}
+.cr{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #f0edff}
+.cr:last-child{border-bottom:none}
+.cl{font-size:11px;color:#9ca3af}
+.cv{font-size:12px;font-weight:700}
+.dvd{border-top:1px dashed #e2deff;margin:5px 0}
+.pos{color:#059669}
+.neg{color:#dc2626}
+.muted{color:#d1d5db}
 .tw{overflow-x:auto;border-radius:12px;border:1.5px solid #e2deff;background:#fff;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;font-size:12px}
 th{background:#ede9fe;color:#7c3aed;font-weight:700;padding:8px;text-align:right;font-size:11px;white-space:nowrap;border-bottom:1px solid #d4ccff}
@@ -51,268 +54,260 @@ td{padding:7px 8px;border-bottom:1px solid #f0edff;text-align:right;white-space:
 td:first-child{text-align:left;font-weight:700}
 tr:hover td{background:#faf9ff}
 tfoot td{background:#ede9fe!important;font-weight:800;color:#5b21b6;border-top:2px solid #d4ccff}
-@media(max-width:900px){.k4,.d4{grid-template-columns:repeat(2,1fr)}.k3,.d3{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:500px){.k4,.k3,.d4,.d3,.d2{grid-template-columns:1fr}}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.g4,.g3,.g2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo"><div class="logo-dot"></div><span class="logo-txt">aanaab</span><span class="logo-sub">Departments 2026</span></div>
-  <button class="tab on" id="t-ov" onclick="nav('ov')">Overview</button>
-  <button class="tab" id="t-pr" onclick="nav('pr')">Product</button>
-  <button class="tab" id="t-pj" onclick="nav('pj')">Projects</button>
-  <button class="tab" id="t-sp" onclick="nav('sp')">Support</button>
-  <div class="sw">
-    <span class="sl"><span class="sd" id="sdot"></span><span id="slbl">Ready</span></span>
-    <button class="sb" onclick="doSync()">&#8635; Sync</button>
+  <div class="logo"><div class="ld"></div><span class="lt">aanaab</span><span class="ls">Departments 2026</span></div>
+  <button class="tab on" id="btn-ov">Overview</button>
+  <button class="tab" id="btn-pr">Product</button>
+  <button class="tab" id="btn-pj">Projects</button>
+  <button class="tab" id="btn-sp">Support</button>
+  <div class="nr">
+    <span class="nl" id="nlbl">Ready</span>
+    <button class="sb" id="syncbtn">Sync</button>
   </div>
 </header>
 <div class="pg on" id="p-ov"></div>
 <div class="pg" id="p-pr"></div>
 <div class="pg" id="p-pj"></div>
 <div class="pg" id="p-sp"></div>
-<script>
-var CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0lejKqhGvbuhBMhHiXI9whSM8aaqMfj7tiVQ2ERTpFkvbMgRSlZLTQhWjXJQV1036uWePnZs8INbp/pub?output=csv";
-var D={"B2C":{"Revenue":{"Jan":121411,"Feb":91310,"Mar":42794,"Apr":113470,"May":79543,"Jun":69785,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Annual Target":{"Jan":125171,"Feb":125171,"Mar":125171,"Apr":120000,"May":120000,"Jun":120000,"Jul":224000,"Aug":224000,"Sep":224000,"Oct":146667,"Nov":146667,"Dec":146667},"Expenses":{"Jan":252590,"Feb":235954,"Mar":246975,"Apr":275770,"May":141102,"Jun":66760,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":121411,"Feb":91310,"Mar":42794,"Apr":113470,"May":79543,"Jun":69785,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":153779,"Feb":125233,"Mar":167604,"Apr":186011,"May":144115,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"B2B":{"Revenue":{"Jan":7500,"Feb":10000,"Mar":0,"Apr":0,"May":25000,"Jun":8696,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Annual Target":{"Jan":70000,"Feb":70000,"Mar":70000,"Apr":66667,"May":66667,"Jun":66667,"Jul":66667,"Aug":66667,"Sep":66667,"Oct":66667,"Nov":66667,"Dec":66667},"Expenses":{"Jan":101238,"Feb":108061,"Mar":96571,"Apr":100495,"May":77329,"Jun":20986,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":7500,"Feb":10000,"Mar":0,"Apr":0,"May":25000,"Jun":8696,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":42357,"Feb":44846,"Mar":34869,"Apr":26723,"May":23650,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"B2G":{"Revenue":{"Jan":0,"Feb":0,"Mar":444106,"Apr":500000,"May":89697,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Annual Target":{"Jan":3616750,"Feb":3616750,"Mar":3616750,"Apr":2752123,"May":2752123,"Jun":2752123,"Jul":2752123,"Aug":2752123,"Sep":2752123,"Oct":2752123,"Nov":2752123,"Dec":2752123},"Expenses":{"Jan":132258,"Feb":168587,"Mar":185277,"Apr":206999,"May":143947,"Jun":11798,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":89690,"Mar":89690,"Apr":89690,"May":164725,"Jun":0,"Jul":164690,"Aug":0,"Sep":164725,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":0,"Feb":34922,"Mar":92254,"Apr":3596,"May":23820,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"MOC KG":{"Revenue":{"Jan":0,"Feb":0,"Mar":100000,"Apr":500000,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Annual Target":{"Jan":0,"Feb":0,"Mar":100000,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":4450000,"Nov":0,"Dec":0},"Expenses":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"DDC":{"Revenue":{"Jan":0,"Feb":0,"Mar":344106,"Apr":0,"May":89697,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Annual Target":{"Jan":0,"Feb":89690,"Mar":89690,"Apr":89690,"May":164725,"Jun":0,"Jul":164690,"Aug":0,"Sep":164725,"Oct":0,"Nov":0,"Dec":0},"Expenses":{"Jan":0,"Feb":34922,"Mar":92254,"Apr":3596,"May":23820,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":89690,"Mar":89690,"Apr":89690,"May":164725,"Jun":0,"Jul":164690,"Aug":0,"Sep":164725,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":0,"Feb":34922,"Mar":92254,"Apr":3596,"May":23820,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"Tech & Product":{"Expenses":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":223110,"Feb":306191,"Mar":296428,"Apr":315222,"May":326154,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"Content & Qual":{"Expenses":{"Jan":2004,"Feb":11240,"Mar":3321,"Apr":3178,"May":5626,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":181532,"Feb":244194,"Mar":153847,"Apr":169667,"May":162910,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"Operations":{"Expenses":{"Jan":85204,"Feb":26294,"Mar":26646,"Apr":79225,"May":70102,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":85204,"Feb":26294,"Mar":26509,"Apr":79087,"May":70102,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"HR":{"Expenses":{"Jan":82578,"Feb":110835,"Mar":66386,"Apr":67273,"May":58862,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":79778,"Feb":108581,"Mar":64951,"Apr":67312,"May":58862,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"Finance":{"Expenses":{"Jan":31890,"Feb":40587,"Mar":33056,"Apr":39911,"May":54056,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":30023,"Feb":38880,"Mar":31960,"Apr":38381,"May":51954,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}},"Others":{"Expenses":{"Jan":370054,"Feb":418509,"Mar":393937,"Apr":365622,"May":570491,"Jun":90931,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash In":{"Jan":0,"Feb":0,"Mar":0,"Apr":0,"May":0,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0},"Cash Out":{"Jan":224000,"Feb":225292,"Mar":186700,"Apr":254000,"May":271378,"Jun":0,"Jul":0,"Aug":0,"Sep":0,"Oct":0,"Nov":0,"Dec":0}}};
 
-var MN=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-var CFG={
-  "B2C":{color:"#3b82f6",rev:true,group:"product"},
-  "B2B":{color:"#10b981",rev:true,group:"product"},
-  "B2G":{color:"#f59e0b",rev:true,group:"projects"},
-  "MOC KG":{color:"#d97706",rev:true,group:"projects",sub:true},
-  "DDC":{color:"#b45309",rev:true,group:"projects",sub:true},
-  "Tech & Product":{color:"#8b5cf6",rev:false,group:"support"},
-  "Content & Qual":{color:"#ec4899",rev:false,group:"support"},
-  "Operations":{color:"#64748b",rev:false,group:"support"},
-  "HR":{color:"#a78bfa",rev:false,group:"support"},
-  "Finance":{color:"#5b21b6",rev:false,group:"support"},
-  "Others":{color:"#94a3b8",rev:false,group:"support"}
+<script id="jdata" type="application/json">
+{"B2C": {"Revenue": {"Jan": 121411, "Feb": 91310, "Mar": 42794, "Apr": 113470, "May": 79543, "Jun": 69785, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Annual Target": {"Jan": 125171, "Feb": 125171, "Mar": 125171, "Apr": 120000, "May": 120000, "Jun": 120000, "Jul": 224000, "Aug": 224000, "Sep": 224000, "Oct": 146667, "Nov": 146667, "Dec": 146667}, "Expenses": {"Jan": 252590, "Feb": 235954, "Mar": 246975, "Apr": 275770, "May": 141102, "Jun": 66760, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 121411, "Feb": 91310, "Mar": 42794, "Apr": 113470, "May": 79543, "Jun": 69785, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 153779, "Feb": 125233, "Mar": 167604, "Apr": 186011, "May": 144115, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "B2B": {"Revenue": {"Jan": 7500, "Feb": 10000, "Mar": 0, "Apr": 0, "May": 25000, "Jun": 8696, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Annual Target": {"Jan": 70000, "Feb": 70000, "Mar": 70000, "Apr": 66667, "May": 66667, "Jun": 66667, "Jul": 66667, "Aug": 66667, "Sep": 66667, "Oct": 66667, "Nov": 66667, "Dec": 66667}, "Expenses": {"Jan": 101238, "Feb": 108061, "Mar": 96571, "Apr": 100495, "May": 77329, "Jun": 20986, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 7500, "Feb": 10000, "Mar": 0, "Apr": 0, "May": 25000, "Jun": 8696, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 42357, "Feb": 44846, "Mar": 34869, "Apr": 26723, "May": 23650, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "B2G": {"Revenue": {"Jan": 0, "Feb": 0, "Mar": 444106, "Apr": 500000, "May": 89697, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Annual Target": {"Jan": 3616750, "Feb": 3616750, "Mar": 3616750, "Apr": 2752123, "May": 2752123, "Jun": 2752123, "Jul": 2752123, "Aug": 2752123, "Sep": 2752123, "Oct": 2752123, "Nov": 2752123, "Dec": 2752123}, "Expenses": {"Jan": 132258, "Feb": 168587, "Mar": 185277, "Apr": 206999, "May": 143947, "Jun": 11798, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 89690, "Mar": 89690, "Apr": 89690, "May": 164725, "Jun": 0, "Jul": 164690, "Aug": 0, "Sep": 164725, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 0, "Feb": 34922, "Mar": 92254, "Apr": 3596, "May": 23820, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "MOC KG": {"Revenue": {"Jan": 0, "Feb": 0, "Mar": 100000, "Apr": 500000, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Annual Target": {"Jan": 0, "Feb": 0, "Mar": 100000, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 4450000, "Nov": 0, "Dec": 0}, "Expenses": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "DDC": {"Revenue": {"Jan": 0, "Feb": 0, "Mar": 344106, "Apr": 0, "May": 89697, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Annual Target": {"Jan": 0, "Feb": 89690, "Mar": 89690, "Apr": 89690, "May": 164725, "Jun": 0, "Jul": 164690, "Aug": 0, "Sep": 164725, "Oct": 0, "Nov": 0, "Dec": 0}, "Expenses": {"Jan": 0, "Feb": 34922, "Mar": 92254, "Apr": 3596, "May": 23820, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 89690, "Mar": 89690, "Apr": 89690, "May": 164725, "Jun": 0, "Jul": 164690, "Aug": 0, "Sep": 164725, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 0, "Feb": 34922, "Mar": 92254, "Apr": 3596, "May": 23820, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "Tech and Product": {"Expenses": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 223110, "Feb": 306191, "Mar": 296428, "Apr": 315222, "May": 326154, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "Content and Qual": {"Expenses": {"Jan": 2004, "Feb": 11240, "Mar": 3321, "Apr": 3178, "May": 5626, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 181532, "Feb": 244194, "Mar": 153847, "Apr": 169667, "May": 162910, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "Operations": {"Expenses": {"Jan": 85204, "Feb": 26294, "Mar": 26646, "Apr": 79225, "May": 70102, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 85204, "Feb": 26294, "Mar": 26509, "Apr": 79087, "May": 70102, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "HR": {"Expenses": {"Jan": 82578, "Feb": 110835, "Mar": 66386, "Apr": 67273, "May": 58862, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 79778, "Feb": 108581, "Mar": 64951, "Apr": 67312, "May": 58862, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "Finance": {"Expenses": {"Jan": 31890, "Feb": 40587, "Mar": 33056, "Apr": 39911, "May": 54056, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 30023, "Feb": 38880, "Mar": 31960, "Apr": 38381, "May": 51954, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}, "Others": {"Expenses": {"Jan": 370054, "Feb": 418509, "Mar": 393937, "Apr": 365622, "May": 570491, "Jun": 90931, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash In": {"Jan": 0, "Feb": 0, "Mar": 0, "Apr": 0, "May": 0, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}, "Cash Out": {"Jan": 224000, "Feb": 225292, "Mar": 186700, "Apr": 254000, "May": 271378, "Jun": 0, "Jul": 0, "Aug": 0, "Sep": 0, "Oct": 0, "Nov": 0, "Dec": 0}}}
+</script>
+
+<script>
+var D = JSON.parse(document.getElementById('jdata').textContent);
+var CSVURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS0lejKqhGvbuhBMhHiXI9whSM8aaqMfj7tiVQ2ERTpFkvbMgRSlZLTQhWjXJQV1036uWePnZs8INbp/pub?output=csv';
+var MN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var CFG = {
+  'B2C':             {color:'#3b82f6',rev:true, group:'product'},
+  'B2B':             {color:'#10b981',rev:true, group:'product'},
+  'B2G':             {color:'#f59e0b',rev:true, group:'projects'},
+  'MOC KG':          {color:'#d97706',rev:true, group:'projects',sub:true},
+  'DDC':             {color:'#b45309',rev:true, group:'projects',sub:true},
+  'Tech and Product':{color:'#8b5cf6',rev:false,group:'support'},
+  'Content and Qual':{color:'#ec4899',rev:false,group:'support'},
+  'Operations':      {color:'#64748b',rev:false,group:'support'},
+  'HR':              {color:'#a78bfa',rev:false,group:'support'},
+  'Finance':         {color:'#5b21b6',rev:false,group:'support'},
+  'Others':          {color:'#94a3b8',rev:false,group:'support'}
 };
 
-function cf(k){return CFG[k]||{color:"#6b7280",rev:false};}
+function g(k){return CFG[k]||{color:'#6b7280',rev:false,group:'support'};}
 function agg(k,f){return MN.reduce(function(s,m){return s+((D[k]&&D[k][f]&&D[k][f][m])||0);},0);}
 function am(k,f,m){return (D[k]&&D[k][f]&&D[k][f][m])||0;}
-function fK(n){if(!n&&n!==0)return"--";var s=n<0?"-":"",a=Math.abs(n);if(a>=1000000)return s+(a/1000000).toFixed(2)+"M";if(a>=1000)return s+(a/1000).toFixed(1)+"K";return s+Math.round(a).toLocaleString();}
-function fm(n){return n?new Intl.NumberFormat("en").format(Math.round(n)):"--";}
-function pc(p){return p>=100?"#059669":p>=50?"#d97706":"#dc2626";}
-function pb(p,c){return "<div class='pb'><div class='pf' style='width:"+Math.min(p,100)+"%;background:"+c+";height:100%'></div></div>";}
-function ss(state,msg){
-  document.getElementById("sdot").className="sd"+(state=="spin"?" spin":"");
-  document.getElementById("slbl").textContent=msg;
-}
+function fK(n){if(!n&&n!==0)return'--';var s=n<0?'-':'',a=Math.abs(n);if(a>=1000000)return s+(a/1000000).toFixed(2)+'M';if(a>=1000)return s+(a/1000).toFixed(1)+'K';return s+Math.round(a).toLocaleString();}
+function fm(n){return n?new Intl.NumberFormat('en').format(Math.round(n)):'--';}
+function pc(p){return p>=100?'#059669':p>=50?'#d97706':'#dc2626';}
+function pbar(p,c){return '<div class="pbar"><div class="pfil" style="width:'+Math.min(p,100)+'%;background:'+c+';height:100%"></div></div>';}
+
+// Navigation
+var TABS = ['ov','pr','pj','sp'];
+TABS.forEach(function(id){
+  document.getElementById('btn-'+id).addEventListener('click',function(){
+    TABS.forEach(function(x){
+      document.getElementById('p-'+x).className='pg';
+      document.getElementById('btn-'+x).className='tab';
+    });
+    document.getElementById('p-'+id).className='pg on';
+    document.getElementById('btn-'+id).className='tab on';
+  });
+});
+
+// Sync
+document.getElementById('syncbtn').addEventListener('click',function(){
+  document.getElementById('nlbl').textContent='Syncing...';
+  fetch(CSVURL).then(function(r){return r.text();}).then(function(t){
+    var p=parseCSV(t);
+    if(p&&Object.keys(p).length){D=p;document.getElementById('nlbl').textContent='Updated '+new Date().toLocaleTimeString();renderAll();}
+    else{document.getElementById('nlbl').textContent='Embedded data';}
+  }).catch(function(){document.getElementById('nlbl').textContent='Embedded data';});
+});
 
 function parseCSV(text){
-  var rows=text.split("\n").map(function(r){
-    var cells=[],cur="",inq=false;
-    for(var i=0;i<r.length;i++){
-      var ch=r[i];
-      if(ch=='"'){inq=!inq;}
-      else if(ch==","&&!inq){cells.push(cur.trim());cur="";}
-      else{cur+=ch;}
-    }
-    cells.push(cur.trim());return cells;
-  });
+  var lines=text.split('\n');
   var hdr=-1;
-  for(var i=0;i<rows.length;i++){if(rows[i][0]==="Department"){hdr=i;break;}}
+  for(var i=0;i<lines.length;i++){if(lines[i].indexOf('Department')===0){hdr=i;break;}}
   if(hdr<0)return null;
   var out={},cur=null;
-  for(var i=hdr+1;i<rows.length;i++){
-    var r=rows[i];
-    if(!r[0]&&!r[1])continue;
-    if(r[0].indexOf("COMPANY SUMMARY")>=0)break;
-    var dv=r[0].trim(),fv=r[1].trim();
-    if(dv){var nm=dv.replace(/^[^a-zA-Z]+/,"").trim();cur=nm;if(!out[cur])out[cur]={};}
+  for(var i=hdr+1;i<lines.length;i++){
+    var cells=lines[i].split(',');
+    if(!cells[0]&&!cells[1])continue;
+    if(cells[0].indexOf('COMPANY SUMMARY')>=0)break;
+    var dv=cells[0].trim().replace(/^[^a-zA-Z]+/,''),fv=cells[1]?cells[1].trim():'';
+    if(dv){cur=dv;if(!out[cur])out[cur]={};}
     if(!cur||!fv)continue;
     out[cur][fv]={};
     for(var mi=0;mi<MN.length;mi++){
-      var raw=(r[mi+2]||"").replace(/,/g,"").trim();
-      if(raw.charAt(0)=="(")raw="-"+raw.slice(1,raw.length-1);
-      out[cur][fv][MN[mi]]=raw===""?0:(parseFloat(raw)||0);
+      var raw=(cells[mi+2]||'').replace(/,/g,'').replace(/"/g,'').trim();
+      if(raw.charAt(0)==='(')raw='-'+raw.slice(1,raw.length-1);
+      out[cur][fv][MN[mi]]=raw===''?0:(parseFloat(raw)||0);
     }
   }
   return out;
 }
 
-function doSync(){
-  ss("spin","Syncing...");
-  fetch(CSV_URL)
-    .then(function(r){return r.text();})
-    .then(function(t){
-      var p=parseCSV(t);
-      if(p&&Object.keys(p).length){D=p;ss("","Updated "+new Date().toLocaleTimeString());renderAll();}
-      else{ss("","Embedded data");}
-    })
-    .catch(function(){ss("","Embedded data");});
-}
-
-function nav(id){
-  var ids=["ov","pr","pj","sp"];
-  for(var i=0;i<ids.length;i++){
-    document.getElementById("p-"+ids[i]).className="pg"+(ids[i]===id?" on":"");
-    document.getElementById("t-"+ids[i]).className="tab"+(ids[i]===id?" on":"");
-  }
-}
-
-function kpis(depts,mainRev,cashDs){
-  var tR=mainRev.reduce(function(s,k){return s+agg(k,"Revenue");},0);
-  var tT=mainRev.reduce(function(s,k){return s+agg(k,"Annual Target");},0);
-  var tE=depts.reduce(function(s,k){return s+(k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses"));},0);
-  var tPL=tR-tE,tCI=cashDs.reduce(function(s,k){return s+agg(k,"Cash In");},0);
-  var tCO=cashDs.reduce(function(s,k){return s+agg(k,"Cash Out");},0);
+function kpis(depts,mRev,cDs){
+  var tR=mRev.reduce(function(s,k){return s+agg(k,'Revenue');},0);
+  var tT=mRev.reduce(function(s,k){return s+agg(k,'Annual Target');},0);
+  var tE=depts.reduce(function(s,k){return s+(k==='Tech and Product'?agg(k,'Cash Out'):agg(k,'Expenses'));},0);
+  var tPL=tR-tE,tCI=cDs.reduce(function(s,k){return s+agg(k,'Cash In');},0);
+  var tCO=cDs.reduce(function(s,k){return s+agg(k,'Cash Out');},0);
   var net=tCI-tCO,pct=tT>0?(tR/tT*100):0,pC=pc(pct);
-  var h="<div class='kg k4'>";
-  h+="<div class='kpi' style='--ac:#5b21b6'><div class='kl'>Total Revenue</div><div class='kv' style='color:#5b21b6'>"+fK(tR)+"</div><div class='ks'>SAR</div></div>";
-  h+="<div class='kpi' style='--ac:"+pC+"'><div class='kl'>% of Target</div><div class='kv' style='color:"+pC+"'>"+pct.toFixed(1)+"%</div>"+pb(pct,pC)+"</div>";
-  h+="<div class='kpi' style='--ac:#dc2626'><div class='kl'>Total Expenses</div><div class='kv' style='color:#dc2626'>"+fK(tE)+"</div></div>";
-  h+="<div class='kpi' style='--ac:"+(tPL>=0?"#059669":"#dc2626")+"'><div class='kl'>Net P&L</div><div class='kv' style='color:"+(tPL>=0?"#059669":"#dc2626")+"'>"+fK(tPL)+"</div><div class='ks'>"+(tPL>=0?"Profit":"Loss")+"</div></div>";
-  h+="</div><div class='kg k3' style='margin-top:0'>";
-  h+="<div class='kpi' style='--ac:#059669'><div class='kl'>Cash In</div><div class='kv' style='color:#059669'>"+fK(tCI)+"</div></div>";
-  h+="<div class='kpi' style='--ac:#dc2626'><div class='kl'>Cash Out</div><div class='kv' style='color:#dc2626'>"+fK(tCO)+"</div></div>";
-  h+="<div class='kpi' style='--ac:"+(net>=0?"#059669":"#dc2626")+"'><div class='kl'>Net Cash Flow</div><div class='kv' style='color:"+(net>=0?"#059669":"#dc2626")+"'>"+fK(net)+"</div></div>";
-  h+="</div>";return h;
+  var h='<div class="g4">';
+  h+='<div class="kpi" style="--ac:#5b21b6"><div class="kl">Total Revenue</div><div class="kv" style="color:#5b21b6">'+fK(tR)+'</div><div class="ks">SAR</div></div>';
+  h+='<div class="kpi" style="--ac:'+pC+'"><div class="kl">% of Target</div><div class="kv" style="color:'+pC+'">'+pct.toFixed(1)+'%</div>'+pbar(pct,pC)+'</div>';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Total Expenses</div><div class="kv" style="color:#dc2626">'+fK(tE)+'</div></div>';
+  h+='<div class="kpi" style="--ac:'+(tPL>=0?'#059669':'#dc2626')+'"><div class="kl">Net P&L</div><div class="kv" style="color:'+(tPL>=0?'#059669':'#dc2626')+'">'+fK(tPL)+'</div><div class="ks">'+(tPL>=0?'Profit':'Loss')+'</div></div>';
+  h+='</div><div class="g3" style="margin-top:0">';
+  h+='<div class="kpi" style="--ac:#059669"><div class="kl">Cash In</div><div class="kv" style="color:#059669">'+fK(tCI)+'</div></div>';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Cash Out</div><div class="kv" style="color:#dc2626">'+fK(tCO)+'</div></div>';
+  h+='<div class="kpi" style="--ac:'+(net>=0?'#059669':'#dc2626')+'"><div class="kl">Net Cash Flow</div><div class="kv" style="color:'+(net>=0?'#059669':'#dc2626')+'">'+fK(net)+'</div></div>';
+  h+='</div>';return h;
 }
 
 function card(k,cashOnly){
-  var c=cf(k);
-  var rev=agg(k,"Revenue"),tgt=agg(k,"Annual Target");
-  var exp=k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses");
-  var cIn=agg(k,"Cash In"),cOut=agg(k,"Cash Out"),netC=cIn-cOut;
+  var c=g(k);
+  var rev=agg(k,'Revenue'),tgt=agg(k,'Annual Target');
+  var exp=k==='Tech and Product'?agg(k,'Cash Out'):agg(k,'Expenses');
+  var cIn=agg(k,'Cash In'),cOut=agg(k,'Cash Out'),netC=cIn-cOut;
   var pl=c.rev?(rev-exp):(0-exp);
   var p=tgt>0?(rev/tgt*100):0,pC=pc(p);
-  var bc=pl>0?"bp":pl<0?"bl":"bn",bt=pl>0?"Profit":pl<0?"Loss":"--";
-  var sub=c.sub?" <span style='font-size:10px;background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px'>sub</span>":"";
-  var h="<div class='dc' style='--dc:"+c.color+"'>";
-  h+="<div class='dct'><span class='dcn'>"+k+sub+"</span><span class='badge "+bc+"'>"+bt+"</span></div>";
+  var bc=pl>0?'bp':pl<0?'bl':'bn',bt=pl>0?'Profit':pl<0?'Loss':'--';
+  var sub=c.sub?' <span style="font-size:10px;background:#fef3c7;color:#92400e;padding:1px 5px;border-radius:3px">sub</span>':'';
+  var h='<div class="dc" style="--bc:'+c.color+'">';
+  h+='<div class="dct"><span class="dcn">'+k+sub+'</span><span class="bdg '+bc+'">'+bt+'</span></div>';
   if(!cashOnly){
     if(c.rev){
-      h+="<div style='font-size:11px;color:#9ca3af'>Revenue</div>";
-      h+="<div style='font-size:17px;font-weight:800;color:"+c.color+"'>"+fK(rev)+" <span style='font-size:11px;color:#9ca3af;font-weight:400'>SAR</span></div>";
-      h+=pb(p,pC);
-      h+="<div style='font-size:10px;font-weight:700;color:"+pC+";margin-top:2px'>"+p.toFixed(1)+"% of "+fK(tgt)+"</div>";
+      h+='<div style="font-size:11px;color:#9ca3af">Revenue</div>';
+      h+='<div style="font-size:17px;font-weight:800;color:'+c.color+'">'+fK(rev)+' <span style="font-size:11px;color:#9ca3af;font-weight:400">SAR</span></div>';
+      h+=pbar(p,pC);
+      h+='<div style="font-size:10px;font-weight:700;color:'+pC+';margin-top:2px">'+p.toFixed(1)+'% of '+fK(tgt)+'</div>';
     }
-    h+="<div class='cd' style='margin-top:6px'><span class='cdl'>Expenses"+(k==="Tech & Product"?" (cash out)":"")+"</span><span class='cdv neg'>"+fK(exp)+"</span></div>";
-    h+="<div class='cd'><span class='cdl'>Net P&L</span><span class='cdv' style='color:"+(pl>=0?"#059669":"#dc2626")+"'>"+fK(pl)+"</span></div>";
-    h+="<div class='divr'></div>";
+    h+='<div class="cr" style="margin-top:6px"><span class="cl">Expenses'+(k==='Tech and Product'?' (cash out)':'')+'</span><span class="cv neg">'+fK(exp)+'</span></div>';
+    h+='<div class="cr"><span class="cl">Net P&L</span><span class="cv" style="color:'+(pl>=0?'#059669':'#dc2626')+'">'+fK(pl)+'</span></div>';
+    h+='<div class="dvd"></div>';
   }
-  h+="<div class='cd' style='margin-top:"+(cashOnly?"4px":"0")+"'><span class='cdl'>Cash in</span><span class='cdv pos'>"+fK(cIn)+"</span></div>";
-  h+="<div class='cd'><span class='cdl'>Cash out</span><span class='cdv neg'>"+fK(cOut)+"</span></div>";
-  h+="<div class='cd'><span class='cdl'>Net cash</span><span class='cdv' style='color:"+(netC>=0?"#059669":"#dc2626")+"'>"+fK(netC)+"</span></div>";
-  h+="</div>";return h;
+  h+='<div class="cr" style="margin-top:'+(cashOnly?'4px':'0')+'"><span class="cl">Cash in</span><span class="cv pos">'+fK(cIn)+'</span></div>';
+  h+='<div class="cr"><span class="cl">Cash out</span><span class="cv neg">'+fK(cOut)+'</span></div>';
+  h+='<div class="cr"><span class="cl">Net cash</span><span class="cv" style="color:'+(netC>=0?'#059669':'#dc2626')+'">'+fK(netC)+'</span></div>';
+  h+='</div>';return h;
 }
 
 function deptTable(k){
-  var c=cf(k);
+  var c=g(k);
   var rows=[
-    {l:"Revenue",fn:function(m){return am(k,"Revenue",m);}},
-    {l:"Annual Target",fn:function(m){return am(k,"Annual Target",m);}},
-    {l:"Expenses",fn:function(m){return am(k,"Expenses",m);}},
-    {l:"Net P&L",fn:function(m){return am(k,"Revenue",m)-am(k,"Expenses",m);}},
-    {l:"Cash In",fn:function(m){return am(k,"Cash In",m);}},
-    {l:"Cash Out",fn:function(m){return am(k,"Cash Out",m);}},
-    {l:"Net Cash",fn:function(m){return am(k,"Cash In",m)-am(k,"Cash Out",m);}},
+    {l:'Revenue',fn:function(m){return am(k,'Revenue',m);}},
+    {l:'Annual Target',fn:function(m){return am(k,'Annual Target',m);}},
+    {l:'Expenses',fn:function(m){return am(k,'Expenses',m);}},
+    {l:'Net P&L',fn:function(m){return am(k,'Revenue',m)-am(k,'Expenses',m);}},
+    {l:'Cash In',fn:function(m){return am(k,'Cash In',m);}},
+    {l:'Cash Out',fn:function(m){return am(k,'Cash Out',m);}},
+    {l:'Net Cash',fn:function(m){return am(k,'Cash In',m)-am(k,'Cash Out',m);}},
   ];
-  var colors={"Revenue":"#059669","Annual Target":"#9ca3af","Expenses":"#dc2626","Cash In":"#059669","Cash Out":"#dc2626"};
-  var h="<div style='margin-bottom:16px'>";
-  h+="<div style='font-size:13px;font-weight:700;color:"+c.color+";margin-bottom:8px;padding:7px 12px;background:#fff;border-radius:9px;border-left:4px solid "+c.color+"'>"+k+(c.sub?" <span style='font-size:10px;background:#fef3c7;color:#92400e;padding:1px 6px;border-radius:3px'>sub</span>":"")+"</div>";
-  h+="<div class='tw'><table><thead><tr><th>Field</th>";
-  MN.forEach(function(m){h+="<th>"+m+"</th>";});
-  h+="<th>Total</th></tr></thead><tbody>";
+  var colors={'Revenue':'#059669','Annual Target':'#9ca3af','Expenses':'#dc2626','Cash In':'#059669','Cash Out':'#dc2626'};
+  var h='<div style="margin-bottom:16px">';
+  h+='<div style="font-size:13px;font-weight:700;color:'+c.color+';margin-bottom:8px;padding:7px 12px;background:#fff;border-radius:9px;border-left:4px solid '+c.color+'">'+k+(c.sub?' <span style="font-size:10px;background:#fef3c7;color:#92400e;padding:1px 6px;border-radius:3px">sub</span>':'')+'</div>';
+  h+='<div class="tw"><table><thead><tr><th>Field</th>';
+  MN.forEach(function(m){h+='<th>'+m+'</th>';});
+  h+='<th>Total</th></tr></thead><tbody>';
   rows.forEach(function(row){
     var tot=MN.reduce(function(s,m){return s+row.fn(m);},0);
-    var bc=colors[row.l]||"#1e1b4b";
-    h+="<tr><td style='color:"+bc+"'>"+row.l+"</td>";
+    var bc2=colors[row.l]||'#1e1b4b';
+    h+='<tr><td style="color:'+bc2+'">'+row.l+'</td>';
     MN.forEach(function(m){
       var v=row.fn(m);
-      var col=v>0?(colors[row.l]||"#059669"):v<0?"#dc2626":"#d1d5db";
-      h+="<td style='color:"+col+"'>"+(v!==0?fm(v):"--")+"</td>";
+      var col=v>0?(colors[row.l]||'#059669'):v<0?'#dc2626':'#d1d5db';
+      h+='<td style="color:'+col+'">'+(v!==0?fm(v):'--')+'</td>';
     });
-    var tc=tot>0?(colors[row.l]||"#059669"):tot<0?"#dc2626":"#d1d5db";
-    h+="<td style='font-weight:700;color:"+tc+"'>"+(tot!==0?fm(tot):"--")+"</td></tr>";
+    var tc=tot>0?(colors[row.l]||'#059669'):tot<0?'#dc2626':'#d1d5db';
+    h+='<td style="font-weight:700;color:'+tc+'">'+(tot!==0?fm(tot):'--')+'</td></tr>';
   });
-  h+="</tbody></table></div></div>";return h;
+  h+='</tbody></table></div></div>';return h;
 }
 
-function cashTable(depts,field,totDs){
-  var pc_=field==="Cash In"?"#059669":"#dc2626";
-  var h="<div class='tw'><table><thead><tr><th>Department</th>";
-  MN.forEach(function(m){h+="<th>"+m+"</th>";});
-  h+="<th>Total</th></tr></thead><tbody>";
+function ctable(depts,field,tDs){
+  var gc=field==='Cash In'?'#059669':'#dc2626';
+  var h='<div class="tw"><table><thead><tr><th>Department</th>';
+  MN.forEach(function(m){h+='<th>'+m+'</th>';});
+  h+='<th>Total</th></tr></thead><tbody>';
   depts.forEach(function(k){
-    var c=cf(k),tot=agg(k,field);
-    h+="<tr><td style='color:"+c.color+"'>"+k+(c.sub?" (sub)":"")+"</td>";
-    MN.forEach(function(m){var v=am(k,field,m);h+="<td style='color:"+(v>0?pc_:"#d1d5db")+"'>"+(v>0?fm(v):"--")+"</td>";});
-    h+="<td style='font-weight:700;color:"+pc_+"'>"+fm(tot)+"</td></tr>";
+    var c=g(k),tot=agg(k,field);
+    h+='<tr><td style="color:'+c.color+'">'+k+(c.sub?' (sub)':'')+'</td>';
+    MN.forEach(function(m){var v=am(k,field,m);h+='<td style="color:'+(v>0?gc:'#d1d5db')+'">'+(v>0?fm(v):'--')+'</td>';});
+    h+='<td style="font-weight:700;color:'+gc+'">'+fm(tot)+'</td></tr>';
   });
-  var tDs=totDs||depts;
-  var g=tDs.reduce(function(s,k){return s+agg(k,field);},0);
-  h+="<tfoot><tr><td>TOTAL</td>";
-  MN.forEach(function(m){var v=tDs.reduce(function(s,k){return s+am(k,field,m);},0);h+="<td>"+(v?fm(v):"--")+"</td>";});
-  h+="<td>"+fm(g)+"</td></tr></tfoot></table></div>";return h;
+  var td2=tDs||depts;
+  var gt=td2.reduce(function(s,k){return s+agg(k,field);},0);
+  h+='<tfoot><tr><td>TOTAL</td>';
+  MN.forEach(function(m){var v=td2.reduce(function(s,k){return s+am(k,field,m);},0);h+='<td>'+(v?fm(v):'--')+'</td>';});
+  h+='<td>'+fm(gt)+'</td></tr></tfoot></table></div>';return h;
 }
 
 function renderOv(){
   var all=Object.keys(CFG);
-  var mainRev=all.filter(function(k){return cf(k).rev&&!cf(k).sub;});
-  var cashDs=all.filter(function(k){return !cf(k).sub;});
-  var h="<div class='sec'>Company Summary - YTD 2026</div>";
-  h+=kpis(all,mainRev,cashDs);
-  h+="<div class='sec'>All Departments</div><div class='dg d4'>";
+  var mRev=all.filter(function(k){return g(k).rev&&!g(k).sub;});
+  var cDs=all.filter(function(k){return !g(k).sub;});
+  var h='<div class="sec">Company Summary - YTD 2026</div>';
+  h+=kpis(all,mRev,cDs);
+  h+='<div class="sec">All Departments</div><div class="g4">';
   all.forEach(function(k){h+=card(k,false);});
-  h+="</div>";
-  // Revenue table
-  var revDs=all.filter(function(k){return cf(k).rev;});
-  h+="<div class='sec'>Revenue Table (SAR)</div><div class='tw'><table><thead><tr><th>Department</th>";
-  MN.forEach(function(m){h+="<th>"+m+"</th>";});
-  h+="<th>Total</th><th>Target</th><th>%</th></tr></thead><tbody>";
-  revDs.forEach(function(k){
-    var c=cf(k),tot=agg(k,"Revenue"),tgt=agg(k,"Annual Target"),p=tgt>0?(tot/tgt*100):0;
-    h+="<tr><td style='color:"+c.color+"'>"+k+(c.sub?" (sub)":"")+"</td>";
-    MN.forEach(function(m){var v=am(k,"Revenue",m);h+="<td class='"+(v>0?"pos":"ze")+"'>"+(v>0?fm(v):"--")+"</td>";});
-    h+="<td class='pos' style='font-weight:700'>"+fm(tot)+"</td><td class='ze'>"+fm(tgt)+"</td>";
-    h+="<td style='font-weight:700;color:"+pc(p)+"'>"+p.toFixed(1)+"%</td></tr>";
+  h+='</div>';
+  var rDs=all.filter(function(k){return g(k).rev;});
+  h+='<div class="sec">Revenue Table (SAR)</div><div class="tw"><table><thead><tr><th>Department</th>';
+  MN.forEach(function(m){h+='<th>'+m+'</th>';});
+  h+='<th>Total</th><th>Target</th><th>%</th></tr></thead><tbody>';
+  rDs.forEach(function(k){
+    var c=g(k),tot=agg(k,'Revenue'),tgt=agg(k,'Annual Target'),p=tgt>0?(tot/tgt*100):0;
+    h+='<tr><td style="color:'+c.color+'">'+k+(c.sub?' (sub)':'')+'</td>';
+    MN.forEach(function(m){var v=am(k,'Revenue',m);h+='<td class="'+(v>0?'pos':'muted')+'">'+(v>0?fm(v):'--')+'</td>';});
+    h+='<td class="pos" style="font-weight:700">'+fm(tot)+'</td><td class="muted">'+fm(tgt)+'</td>';
+    h+='<td style="font-weight:700;color:'+pc(p)+'">'+p.toFixed(1)+'%</td></tr>';
   });
-  h+="</tbody></table></div>";
-  h+="<div class='sec'>Cash In - Monthly (SAR)</div>"+cashTable(cashDs,"Cash In");
-  h+="<div class='sec'>Cash Out - Monthly (SAR)</div>"+cashTable(cashDs,"Cash Out");
-  document.getElementById("p-ov").innerHTML=h;
+  h+='</tbody></table></div>';
+  h+='<div class="sec">Cash In - Monthly (SAR)</div>'+ctable(cDs,'Cash In');
+  h+='<div class="sec">Cash Out - Monthly (SAR)</div>'+ctable(cDs,'Cash Out');
+  document.getElementById('p-ov').innerHTML=h;
 }
 
 function renderPr(){
-  var depts=["B2C","B2B"];
-  var h="<div class='sec'>Product - YTD 2026</div>";
+  var depts=['B2C','B2B'];
+  var h='<div class="sec">Product - YTD 2026</div>';
   h+=kpis(depts,depts,depts);
-  h+="<div class='sec'>Departments</div><div class='dg d2'>";
+  h+='<div class="sec">Departments</div><div class="g2">';
   depts.forEach(function(k){h+=card(k,false);});
-  h+="</div><div class='sec'>Department Details</div>";
+  h+='</div><div class="sec">Department Details</div>';
   depts.forEach(function(k){h+=deptTable(k);});
-  document.getElementById("p-pr").innerHTML=h;
+  document.getElementById('p-pr').innerHTML=h;
 }
 
 function renderPj(){
-  var depts=["B2G","MOC KG","DDC"];
-  var h="<div class='sec'>Projects - YTD 2026</div>";
-  h+=kpis(depts,["B2G"],["B2G"]);
-  h+="<div class='sec'>Departments</div><div class='dg d3'>";
+  var depts=['B2G','MOC KG','DDC'];
+  var h='<div class="sec">Projects - YTD 2026</div>';
+  h+=kpis(depts,['B2G'],['B2G']);
+  h+='<div class="sec">Departments</div><div class="g3">';
   depts.forEach(function(k){h+=card(k,false);});
-  h+="</div><div class='sec'>Department Details</div>";
+  h+='</div><div class="sec">Department Details</div>';
   depts.forEach(function(k){h+=deptTable(k);});
-  document.getElementById("p-pj").innerHTML=h;
+  document.getElementById('p-pj').innerHTML=h;
 }
 
 function renderSp(){
-  var depts=["Tech & Product","Content & Qual","Operations","HR","Finance","Others"];
-  var tE=depts.reduce(function(s,k){return s+(k==="Tech & Product"?agg(k,"Cash Out"):agg(k,"Expenses"));},0);
-  var tCO=depts.reduce(function(s,k){return s+agg(k,"Cash Out");},0);
-  var net=0-tCO;
-  var h="<div class='sec'>Support - YTD 2026</div><div class='kg k3'>";
-  h+="<div class='kpi' style='--ac:#dc2626'><div class='kl'>Total Expenses</div><div class='kv' style='color:#dc2626'>"+fK(tE)+"</div></div>";
-  h+="<div class='kpi' style='--ac:#dc2626'><div class='kl'>Cash Out</div><div class='kv' style='color:#dc2626'>"+fK(tCO)+"</div></div>";
-  h+="<div class='kpi' style='--ac:#dc2626'><div class='kl'>Net Cash Flow</div><div class='kv' style='color:#dc2626'>"+fK(net)+"</div></div>";
-  h+="</div><div class='sec'>Departments</div><div class='dg d3'>";
+  var depts=['Tech and Product','Content and Qual','Operations','HR','Finance','Others'];
+  var tE=depts.reduce(function(s,k){return s+(k==='Tech and Product'?agg(k,'Cash Out'):agg(k,'Expenses'));},0);
+  var tCO=depts.reduce(function(s,k){return s+agg(k,'Cash Out');},0);
+  var h='<div class="sec">Support - YTD 2026</div><div class="g3">';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Total Expenses</div><div class="kv" style="color:#dc2626">'+fK(tE)+'</div></div>';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Cash Out</div><div class="kv" style="color:#dc2626">'+fK(tCO)+'</div></div>';
+  h+='<div class="kpi" style="--ac:#dc2626"><div class="kl">Net Cash</div><div class="kv" style="color:#dc2626">'+fK(0-tCO)+'</div></div>';
+  h+='</div><div class="sec">Departments</div><div class="g3">';
   depts.forEach(function(k){h+=card(k,true);});
-  h+="</div><div class='sec'>Cash Out - Monthly (SAR)</div>"+cashTable(depts,"Cash Out");
-  document.getElementById("p-sp").innerHTML=h;
+  h+='</div><div class="sec">Cash Out - Monthly (SAR)</div>'+ctable(depts,'Cash Out');
+  document.getElementById('p-sp').innerHTML=h;
 }
 
 function renderAll(){renderOv();renderPr();renderPj();renderSp();}
