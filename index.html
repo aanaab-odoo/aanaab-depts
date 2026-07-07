@@ -103,8 +103,7 @@ function ss(state,msg){
 }
 
 function parseCSV(text){
-  var rows=text.split("
-").map(function(r){
+  var rows=text.split("\n").map(function(r){
     var cells=[],cur="",inq=false;
     for(var i=0;i<r.length;i++){
       var ch=r[i];
