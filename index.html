@@ -74,10 +74,10 @@ tfoot td{background:#ede9fe!important;font-weight:800;color:#5b21b6;border-top:2
     <button class="sb" onclick="sync()">&#8635; Sync</button>
   </div>
 </header>
-<div class="pg on" id="p-ov"><div class="loading">Loading...</div></div>
-<div class="pg"    id="p-pr"><div class="loading">Loading...</div></div>
-<div class="pg"    id="p-pj"><div class="loading">Loading...</div></div>
-<div class="pg"    id="p-sp"><div class="loading">Loading...</div></div>
+<div class="pg on" id="p-ov"></div>
+<div class="pg"    id="p-pr"></div>
+<div class="pg"    id="p-pj"></div>
+<div class="pg"    id="p-sp"></div>
 
 <script>
 var CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0lejKqhGvbuhBMhHiXI9whSM8aaqMfj7tiVQ2ERTpFkvbMgRSlZLTQhWjXJQV1036uWePnZs8INbp/pub?output=csv";
@@ -132,8 +132,12 @@ function sync(){
   setSS("loading","Syncing...");
   fetch(CSV_URL)
     .then(function(r){return r.text();})
-    .then(function(t){var p=parseCSV(t);if(!p||!Object.keys(p).length)throw new Error("parse");D=p;setSS("ok","Updated "+new Date().toLocaleTimeString());renderAll();})
-    .catch(function(){setSS("err","Sync failed");if(Object.keys(D).length)renderAll();});
+    .then(function(t){
+      var p=parseCSV(t);
+      if(p&&Object.keys(p).length){D=p;setSS("ok","Updated "+new Date().toLocaleTimeString());renderAll();}
+      else{setSS("ok","Embedded data");}
+    })
+    .catch(function(){setSS("ok","Embedded data");});
 }
 function nav(id,btn){
   document.querySelectorAll(".pg").forEach(function(p){p.classList.remove("on");});
@@ -340,8 +344,8 @@ function renderSp(){
 
 function renderAll(){renderOv();renderPr();renderPj();renderSp();}
 renderAll();
-setSS("ok","Embedded data · click Sync to update");
-sync();
+setSS("ok","Embedded data · click Sync to refresh");
+setTimeout(sync,100);
 </script>
 </body>
 </html>
